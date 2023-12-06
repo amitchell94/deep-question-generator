@@ -4,7 +4,7 @@
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-heroic-features/blob/master/LICENSE)
 */
 function showRandomQuestion() {
-    fetch('../questions.json') // Path to your JSON file
+    fetch('questions.json')
         .then(response => response.json())
         .then(questions => {
             const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
