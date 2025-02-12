@@ -14,13 +14,21 @@ function shuffleArray(array) {
 }
 
 function loadQuestions() {
-    fetch('questions.json')
-        .then(response => response.json())
+    fetch('questions.json') // Ensure this path is correct
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(questions => {
-            shuffledQuestions = [...questions]; // Copy the array
-            shuffleArray(shuffledQuestions); // Shuffle the questions
-            currentIndex = 0; // Reset index
-            showNextQuestion(); // Show the first question
+            if (!Array.isArray(questions)) {
+                throw new Error("Invalid data format: Expected an array of questions.");
+            }
+            shuffledQuestions = [...questions];
+            shuffleArray(shuffledQuestions);
+            currentIndex = 0;
+            showNextQuestion(); // Show the first question immediately
         })
         .catch(error => console.error('Error loading questions:', error));
 }
@@ -40,6 +48,15 @@ function showNextQuestion() {
     document.getElementById('question').innerText = shuffledQuestions[currentIndex];
     currentIndex++;
 }
+
+function setVh() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+// Set the height on load and resize
+window.addEventListener('resize', setVh);
+setVh();
 
 // Load the questions on page load
 window.onload = loadQuestions;
