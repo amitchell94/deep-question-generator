@@ -13,7 +13,7 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet"/>
 </head>
-<body onload="showRandomQuestion()">
+<body onload="loadQuestions()">
 <!-- Header-->
 <div class="content-wrapper">
 <header style="margin-top: 5rem">
@@ -29,7 +29,7 @@
                 </div>
                 <br>
                 <br>
-                <button class="btn btn-primary px-3 btn-lg" onclick="showRandomQuestion()">Generate New Question</button>
+                <button class="btn btn-primary px-3 btn-lg" onclick="showNextQuestion()">Next Question</button>
                 <p class="text-muted pt-3">To view a list of all questions, click <a href="list.html" style=" color:
                     black">here.</a></p>
             </div>
