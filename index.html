@@ -16,20 +16,19 @@
 <body onload="loadQuestions()" class="bg-light" style="background-image: url('assets/1018.png');">
 <!-- Header-->
 
-<div class="content-wrapper" style="display: flex; align-items: center; justify-content: center; height: calc(var(--vh, 1vh) * 100);">
-<header >
+<div class="row mx-lg-5" style="display: flex; align-items: center; justify-content: center; height: calc(var(--vh, 1vh) * 100);">
+<header>
     <div class="container px-lg-5">
-        <div class="p-2 p-lg-5 bg-light card border shadow-lg rounded-lg text-center">
+        <div class="p-2 p-lg-5 bg-light card border shadow-lg text-center col-12 w-100" style="border-radius: 20px;">
             <div class="m-4 m-lg-5">
                 <!-- <h1 class="display-5 fw-bold ">Personal Question Generator</h1> -->
                 <!-- <p class="fs-4 text-muted pb-2">
                     Click the button below to generate a random personal question!
                 </p> -->
                 <div class="p-3 p-lg-5 bg-light">
-                    <p class="h1 text-muted"><span id="question" class="text-dark">Loading...</span></p>
+                    <p class="h1 text-muted"><span id="question" class="text-dark">Click the button below to generate a random personal question!</span></p>
                 </div>
-                <p class="text-muted pt-3">To view a list of all questions, click <a href="list.html" style=" color:
-            black">here.</a></p>
+
             </div>
         </div>
         <div class="text-center">
@@ -42,7 +41,11 @@
 </div>
 <!-- Footer-->
 <footer class="py-2 bg-light">
-    <div class="container"><p class="m-0 text-center text-muted">Developed by Andy Mitchell
+    <div class="container">
+        <p class="mb-1 text-muted text-center">To view a list of all questions, click <a href="list.html" style=" color:
+            black">here.</a></p>
+
+        <p class="m-0 text-center text-muted">Developed by Andy Mitchell
         <br>2023</p>
     </div>
 </footer>
